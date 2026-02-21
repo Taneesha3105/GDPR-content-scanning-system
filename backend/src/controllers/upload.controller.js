@@ -126,14 +126,12 @@ exports.scanFile = async (req, res) => {
   }
 };
 
-/* ---------------- HELPERS ---------------- */
 
 function normalizeViolations(raw) {
   if (Array.isArray(raw)) {
     return raw;
   }
 
-  // If Python returned an object (CSV/Excel case)
   if (typeof raw === "object" && raw !== null) {
     return Object.entries(raw).map(([type, count]) => ({
       type,
