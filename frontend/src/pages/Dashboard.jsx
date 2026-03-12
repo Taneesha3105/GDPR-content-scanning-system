@@ -14,7 +14,6 @@ export default function Dashboard() {
 
   const loadScans = async () => {
     try {
-      console.log("hello this is prior")
       const res = await fetchScanHistoryAPI();
       console.log(res);
       setScans(res.data);
